@@ -1,0 +1,120 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 OPR/114.0.0.0" version="26.0.1">
+  <diagram name="Strona-1" id="D3peEo01_ePu234tdtAJ">
+    <mxGraphModel dx="2748" dy="2067" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="BCMjPhhj_PTSFu1x7b2h-6" value="woda" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="-80" y="10" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="BCMjPhhj_PTSFu1x7b2h-18" value="" style="swimlane;startSize=0;" parent="1" vertex="1">
+          <mxGeometry x="-520" y="-10" width="320" height="460" as="geometry">
+            <mxRectangle x="-220" width="80" height="40" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="BCMjPhhj_PTSFu1x7b2h-12" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="BCMjPhhj_PTSFu1x7b2h-18" source="BCMjPhhj_PTSFu1x7b2h-7" target="BCMjPhhj_PTSFu1x7b2h-11" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="BCMjPhhj_PTSFu1x7b2h-7" value="drzewo" style="rounded=0;whiteSpace=wrap;html=1;" parent="BCMjPhhj_PTSFu1x7b2h-18" vertex="1">
+          <mxGeometry x="119.97" y="44.97" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="BCMjPhhj_PTSFu1x7b2h-14" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="BCMjPhhj_PTSFu1x7b2h-18" source="BCMjPhhj_PTSFu1x7b2h-11" target="BCMjPhhj_PTSFu1x7b2h-13" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="BCMjPhhj_PTSFu1x7b2h-11" value="płonące drzewo" style="rounded=0;whiteSpace=wrap;html=1;" parent="BCMjPhhj_PTSFu1x7b2h-18" vertex="1">
+          <mxGeometry x="119.97" y="134.97" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="BCMjPhhj_PTSFu1x7b2h-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="BCMjPhhj_PTSFu1x7b2h-18" source="BCMjPhhj_PTSFu1x7b2h-13" target="BCMjPhhj_PTSFu1x7b2h-7" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="179.97" y="324.97" />
+              <mxPoint x="69.97" y="324.97" />
+              <mxPoint x="69.97" y="24.97" />
+              <mxPoint x="179.97" y="24.97" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="BCMjPhhj_PTSFu1x7b2h-17" value="odnowienie pola&lt;br&gt;po &lt;i&gt;k&lt;/i&gt; iteracjach" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="BCMjPhhj_PTSFu1x7b2h-16" vertex="1" connectable="0">
+          <mxGeometry x="0.0504" y="1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="BCMjPhhj_PTSFu1x7b2h-13" value="spalone drzewo" style="rounded=0;whiteSpace=wrap;html=1;" parent="BCMjPhhj_PTSFu1x7b2h-18" vertex="1">
+          <mxGeometry x="119.97" y="224.97" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="BCMjPhhj_PTSFu1x7b2h-23" value="Właściwości: możliwość samozapłonu (checkbox w panelu konfiguracyjnym), następuje z prawdopodobieństwem &lt;i&gt;ps &lt;/i&gt;(odpowiednio&amp;nbsp;małe)" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="BCMjPhhj_PTSFu1x7b2h-18" vertex="1">
+          <mxGeometry x="10" y="360" width="300" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="BCMjPhhj_PTSFu1x7b2h-20" value="&lt;b&gt;Cykl życia komórki drzewa&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="-450" y="-50" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="BCMjPhhj_PTSFu1x7b2h-33" value="Właściwości: Bariera dla ognia" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="70" y="10" width="170" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="BCMjPhhj_PTSFu1x7b2h-34" value="&lt;b&gt;Czynniki wpływające na &lt;br&gt;rozprzestrzenianie się ognia&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="30" y="-50" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="BCMjPhhj_PTSFu1x7b2h-35" value="wiatr" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="-80" y="190" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="BCMjPhhj_PTSFu1x7b2h-36" value="Właściwości: Zmiana prawdopodobieństwa rozprzestrzeniania się pożaru w różnych kierunkach, kierunek powinien zmieniać się co kilka iteracji. Wiatr występuję w 9 stanach (8 na kierunki oraz 9 jako stan 0 - bezwietrzny)" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="70" y="190" width="270" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="BCMjPhhj_PTSFu1x7b2h-38" value="Warunki występowania: losowo wygenerowany jednolity obszar na mapie." style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="70" y="40" width="270" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="BCMjPhhj_PTSFu1x7b2h-40" value="&lt;span&gt;Generowanie mapy&lt;/span&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="-450" y="500" width="130" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="BCMjPhhj_PTSFu1x7b2h-43" value="Warunki występowania: zmiana kierunku wiatru co kilka iteracji. (checkbox występujący w panelu konfiguracyjnym)" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="60" y="290" width="270" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="BCMjPhhj_PTSFu1x7b2h-58" value="" style="group" parent="1" vertex="1" connectable="0">
+          <mxGeometry x="400" y="190" width="160" height="125" as="geometry" />
+        </mxCell>
+        <mxCell id="BCMjPhhj_PTSFu1x7b2h-48" value="↖" style="rounded=0;whiteSpace=wrap;html=1;" parent="BCMjPhhj_PTSFu1x7b2h-58" vertex="1">
+          <mxGeometry width="40" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="BCMjPhhj_PTSFu1x7b2h-49" value="⬆" style="rounded=0;whiteSpace=wrap;html=1;" parent="BCMjPhhj_PTSFu1x7b2h-58" vertex="1">
+          <mxGeometry x="60" width="40" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="BCMjPhhj_PTSFu1x7b2h-50" value="↗" style="rounded=0;whiteSpace=wrap;html=1;" parent="BCMjPhhj_PTSFu1x7b2h-58" vertex="1">
+          <mxGeometry x="120" width="40" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="BCMjPhhj_PTSFu1x7b2h-52" value="⬅" style="rounded=0;whiteSpace=wrap;html=1;" parent="BCMjPhhj_PTSFu1x7b2h-58" vertex="1">
+          <mxGeometry y="45" width="40" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="BCMjPhhj_PTSFu1x7b2h-53" value="0" style="rounded=0;whiteSpace=wrap;html=1;" parent="BCMjPhhj_PTSFu1x7b2h-58" vertex="1">
+          <mxGeometry x="60" y="45" width="40" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="BCMjPhhj_PTSFu1x7b2h-54" value="➡" style="rounded=0;whiteSpace=wrap;html=1;" parent="BCMjPhhj_PTSFu1x7b2h-58" vertex="1">
+          <mxGeometry x="120" y="45" width="40" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="BCMjPhhj_PTSFu1x7b2h-55" value="↙" style="rounded=0;whiteSpace=wrap;html=1;" parent="BCMjPhhj_PTSFu1x7b2h-58" vertex="1">
+          <mxGeometry y="90" width="40" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="BCMjPhhj_PTSFu1x7b2h-56" value="⬇" style="rounded=0;whiteSpace=wrap;html=1;" parent="BCMjPhhj_PTSFu1x7b2h-58" vertex="1">
+          <mxGeometry x="60" y="90" width="40" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="BCMjPhhj_PTSFu1x7b2h-57" value="↘" style="rounded=0;whiteSpace=wrap;html=1;" parent="BCMjPhhj_PTSFu1x7b2h-58" vertex="1">
+          <mxGeometry x="120" y="90" width="40" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="BCMjPhhj_PTSFu1x7b2h-88" value="" style="group" parent="1" vertex="1" connectable="0">
+          <mxGeometry x="384" y="-20" width="176" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="BCMjPhhj_PTSFu1x7b2h-59" value="siatka lasu&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="verticalLabelPosition=bottom;verticalAlign=top;html=1;shape=mxgraph.basic.patternFillRect;fillStyle=grid;step=5;fillStrokeWidth=0.2;fillStrokeColor=#dddddd;" parent="BCMjPhhj_PTSFu1x7b2h-88" vertex="1">
+          <mxGeometry width="176" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="X6OubedZgGY_RDiZ7yA5-2" value="woda" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-720" y="560" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="X6OubedZgGY_RDiZ7yA5-3" value="Woda generowana jest w sposób, gdzie wybrany losowy punkt dąży do przeciwległej krawędzi lasu.&amp;nbsp;&lt;div&gt;Wyodrębnione są 4 kierunki, w których woda może podążać:&lt;/div&gt;&lt;div&gt;- lewo górna,&lt;/div&gt;&lt;div&gt;- lewo dół,&lt;/div&gt;&lt;div&gt;- prawo góra,&lt;/div&gt;&lt;div&gt;- prawo dół&lt;/div&gt;&lt;div&gt;w zależności od położenia punktu początkowego.&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Woda kształtowana jest poprzez wartość generowaną losowo, podzieloną na przedziały.&lt;/div&gt;&lt;div&gt;Jeśli p &amp;lt; 0.3 woda skręca w prawą stronę,&lt;/div&gt;&lt;div&gt;Jeśli p &amp;lt; 0.6 woda skręca w lewą stronę,&amp;nbsp;&lt;/div&gt;&lt;div&gt;Jeśli p &amp;gt; 0.6 woda kieruje się w sposób schodkowy we wcześniej ustalonym kierunku.&amp;nbsp;&amp;nbsp;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="-720" y="635" width="560" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="X6OubedZgGY_RDiZ7yA5-6" value="" style="shape=stencil(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);lineShape=1;strokeColor=#0000FF;" vertex="1" parent="1">
+          <mxGeometry x="390.4152373103843" y="-8.011648142286276" width="143.1904975176367" height="110.12092210147276" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

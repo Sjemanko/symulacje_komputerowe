@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>Forest fire simulation</h1>
+
+    <div class="main-content">
+        <div class="controls">
+            <button>wind &larr; </button>
+            <button>wind &rarr; </button>
+            <button>wind &uarr; </button>
+            <button>wind &darr; </button>
+        </div>
+
+        <canvas id="forest" height="800" width="800"></canvas>
+    </div>
+
+    <script>
+        const canvas = document.getElementById('forest');
+        const context = canvas.getContext('2d');
+
+        const forestSize = 20;
+        const cols = Math.floor(canvas.width / forestSize);
+        const rows = Math.floor(canvas.height / forestSize);
+
+
+        const CELL_STATE = {
+            TREE: 0,
+            WATER: 1,
+            FIRE: 2,
+            BURNT: 3,
+
+        };
+
+        const CELL_COLOR = {
+            TREE: '#228B22',
+            FIRE: 'red',
+            BURNT: 'black',
+            WATER: '#1E90FF'
+        };
+
+        function createForest() {
+            const forest = []
+            for (let i = 0; i < rows; i++) {
+                const row = [];
+                for (let j = 0; j < cols; j++) {
+                    row.push(0);
+                }
+                forest.push(row);
+            }
+            return forest;
+        }
+
+        // River generate function
+        function generateRiver(forest) {
+            let x = Math.floor(Math.max(Math.random(cols) * cols - 5, 5));
+            let y = Math.floor(Math.max(Math.random(rows) * rows - 5, 5));
+
+            console.log(cols, rows)
+            console.log(x, y);
+
+            let directionRandomizerY = y < rows / 2 ? 'down' : 'up';
+            let directionRandomizerX = x < cols / 2 ? 'right' : 'left';
+
+            console.log(directionRandomizerY, directionRandomizerX);
+            while ((y < rows - 2 && y > 1) && (x < cols - 2 && x > 1)) {
+                forest[y][x] = 1;
+                // Randomized river direction shift 
+                const direction = Math.random();
+                if (direction < 0.3 && x > 0) {
+                    // Shift to the left
+                    x--;
+                    forest[y][x] = 1;
+                } else if (direction < 0.6 && x < cols - 1) {
+                    // Shift to the right
+                    x++;
+                    forest[y][x] = 1;
+                } else if (direction > 0.6 && direction < 1) {
+                    // Going towards the target part on the map (up left, up right, down left, down right)
+                    if (directionRandomizerY === 'up') {
+                        y--;
+                        forest[y][x] = 1;
+                    } else {
+                        y++;
+                        forest[y][x] = 1;
+                    }
+                    if (directionRandomizerX === 'left') {
+                        x--;
+                        forest[y][x] = 1;
+                    } else {
+                        x++;
+                        forest[y][x] = 1;
+                    }
+                }
+            }
+        }
+
+        function drawMap(forest) {
+            for (let x = 0; x < rows; x++) {
+                for (let y = 0; y < cols; y++) {
+                    if (forest[x][y] === CELL_STATE.WATER) {
+                        context.fillStyle = CELL_COLOR.WATER;
+                    } else if (forest[x][y] === CELL_STATE.TREE) {
+                        context.fillStyle = CELL_COLOR.TREE;
+                    }
+                    context.fillRect(y * forestSize, x * forestSize, forestSize, forestSize);
+                    context.strokeStyle = 'grey';
+                    context.strokeRect(y * forestSize, x * forestSize, forestSize, forestSize);
+
+                }
+            }
+        }
+
+        const forest = createForest();
+        console.log(forest);
+        generateRiver(forest)
+        drawMap(forest);
+
+        canvas.addEventListener('click', (e) => {
+            const rect = canvas.getBoundingClientRect();
+            let x = e.clientX - rect.left;
+            let y = e.clientY - rect.top;
+
+            const col = Math.floor(x / forestSize);
+            const row = Math.floor(y / forestSize);
+
+            // console.log(x, y)
+            console.log(col, row)
+
+        })
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,27 @@
+h1 {
+    text-align: center;
+    color: rgba(206, 202, 202, 0.558);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html, body {
+    margin: 0;
+    height: 100%;
+    padding: 0;
+    background-color: rgb(54, 49, 49);
+}
+
+.main-content {
+    display: flex;
+}
+
+.controls {
+    justify-content: center;
+    padding: 0 2%;
+}
+
+canvas {
+    margin: 0;
+    height: 100%;
+    background-color: #f4f4f4;
+}
