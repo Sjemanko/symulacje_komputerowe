@@ -5,6 +5,7 @@ h1 {
 }
 
 html, body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     height: 100%;
     padding: 0;
@@ -20,6 +21,16 @@ html, body {
     padding: 0 2%;
 }
 
+.form { 
+
+}
+
+.form .input {
+    display: flex;
+    color: rgb(225, 219, 219);
+    flex-direction: column;
+    margin-top: 12px;
+}
 canvas {
     margin: 0;
     height: 100%;

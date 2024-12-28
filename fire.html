@@ -13,11 +13,24 @@
 
     <div class="main-content">
         <div class="controls">
-            <button>wind &larr; </button>
-            <button>wind &rarr; </button>
-            <button>wind &uarr; </button>
-            <button>wind &darr; </button>
+            <div class="">
+                <button>wind &larr; </button>
+                <button>wind &rarr; </button>
+                <button>wind &uarr; </button>
+                <button>wind &darr; </button>
+            </div>
+            <div class="form">
+                <div class="input input-with-label-p">
+                    <label for="p">Rozprzestrzenianie się pożaru (1 - p) </label>
+                    <input id="p" type="number">
+                </div>
+                <div class="input input-with-label-recovery">
+                    <label for="recovery">Ilość iteracji, po których następuje odnowa: </label>
+                    <input id="recovery" type="number">
+                </div>
+            </div>
         </div>
+
 
         <canvas id="forest" height="800" width="800"></canvas>
     </div>
@@ -27,9 +40,9 @@
         const context = canvas.getContext('2d');
 
         const forestSize = 20;
+        // ogarnac cols, rows
         const cols = Math.floor(canvas.width / forestSize);
         const rows = Math.floor(canvas.height / forestSize);
-
 
         const CELL_STATE = {
             TREE: 0,
@@ -46,6 +59,44 @@
             WATER: '#1E90FF'
         };
 
+        canvas.addEventListener('click', (e) => {
+            const rect = canvas.getBoundingClientRect();
+            let x = e.clientX - rect.left;
+            let y = e.clientY - rect.top;
+
+            const col = Math.floor(x / forestSize);
+            const row = Math.floor(y / forestSize);
+
+            // console.log(x, y)
+            console.log(row, col, forest[row][col])
+            startFireClick(col, row)
+        })
+
+        function startFireClick(row, col) {
+
+            if (forest[col][row] === CELL_STATE.WATER) {
+                return;
+            }
+            forest[col][row] = CELL_STATE.FIRE;
+            drawMap(forest);
+
+        }
+
+        function startFire() {
+            let x = Math.floor(Math.random() * cols);
+            let y = Math.floor(Math.random() * rows);
+
+
+            if (forest[x][y] === CELL_STATE.WATER) {
+                while (forest[x][y] === CELL_STATE.WATER) {
+                    x = Math.floor(Math.random() * cols);
+                    y = Math.floor(Math.random() * rows);
+                }
+            }
+            forest[x][y] = CELL_STATE.FIRE;
+            drawMap(forest);
+        }
+
         function createForest() {
             const forest = []
             for (let i = 0; i < rows; i++) {
@@ -58,8 +109,26 @@
             return forest;
         }
 
+        function drawMap(forest) {
+            for (let x = 0; x < rows; x++) {
+                for (let y = 0; y < cols; y++) {
+                    if (forest[x][y] === CELL_STATE.WATER) {
+                        context.fillStyle = CELL_COLOR.WATER;
+                    } else if (forest[x][y] === CELL_STATE.TREE) {
+                        context.fillStyle = CELL_COLOR.TREE;
+                    } else if (forest[x][y] === CELL_STATE.FIRE) {
+                        context.fillStyle = CELL_COLOR.FIRE;
+                    }
+                    context.fillRect(y * forestSize, x * forestSize, forestSize, forestSize);
+                    context.strokeStyle = 'grey';
+                    context.strokeRect(y * forestSize, x * forestSize, forestSize, forestSize);
+
+                }
+            }
+        }
+
         // River generate function
-        function generateRiver(forest) {
+        const generateRiver = (forest) => {
             let x = Math.floor(Math.max(Math.random(cols) * cols - 5, 5));
             let y = Math.floor(Math.max(Math.random(rows) * rows - 5, 5));
 
@@ -102,39 +171,11 @@
             }
         }
 
-        function drawMap(forest) {
-            for (let x = 0; x < rows; x++) {
-                for (let y = 0; y < cols; y++) {
-                    if (forest[x][y] === CELL_STATE.WATER) {
-                        context.fillStyle = CELL_COLOR.WATER;
-                    } else if (forest[x][y] === CELL_STATE.TREE) {
-                        context.fillStyle = CELL_COLOR.TREE;
-                    }
-                    context.fillRect(y * forestSize, x * forestSize, forestSize, forestSize);
-                    context.strokeStyle = 'grey';
-                    context.strokeRect(y * forestSize, x * forestSize, forestSize, forestSize);
-
-                }
-            }
-        }
-
         const forest = createForest();
         console.log(forest);
         generateRiver(forest)
         drawMap(forest);
-
-        canvas.addEventListener('click', (e) => {
-            const rect = canvas.getBoundingClientRect();
-            let x = e.clientX - rect.left;
-            let y = e.clientY - rect.top;
-
-            const col = Math.floor(x / forestSize);
-            const row = Math.floor(y / forestSize);
-
-            // console.log(x, y)
-            console.log(col, row)
-
-        })
+        startFire(cols, rows);
 
     </script>
 </body>
