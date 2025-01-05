@@ -1,7 +1,8 @@
 h1 {
     text-align: center;
-    color: rgba(206, 202, 202, 0.558);
+    color: rgb(204, 204, 204);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 40px;
 }
 
 html, body {
@@ -9,11 +10,20 @@ html, body {
     margin: 0;
     height: 100%;
     padding: 0;
-    background-color: rgb(54, 49, 49);
+    background-color: rgb(32, 32, 32);
+}
+
+.content-wrapper {
+    display: flex;
+    font-size: 60px;
+    justify-content: center;
+    color:#f4f4f4;
+    
 }
 
 .main-content {
     display: flex;
+    justify-content: space-evenly;
 }
 
 .controls {
@@ -21,16 +31,40 @@ html, body {
     padding: 0 2%;
 }
 
-.form { 
-
-}
-
-.form .input {
+.input {
     display: flex;
-    color: rgb(225, 219, 219);
+    color: rgb(255, 255, 255);
     flex-direction: column;
     margin-top: 12px;
 }
+
+.checkbox {
+    display: flex;
+    color: rgb(225, 219, 219);
+    justify-content: center;
+    align-items: center;
+    margin-top: 24px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.buttons > * {
+    background-color: firebrick;
+    border-radius: 5px;
+    font-size: 12px;
+    padding: 16px;
+    text-align: center;
+    color: white;
+    cursor: pointer;
+}
+
+
 canvas {
     margin: 0;
     height: 100%;
