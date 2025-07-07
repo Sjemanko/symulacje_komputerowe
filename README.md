@@ -5,6 +5,7 @@ An additional feature is a water algorithm that generates a reservoir instead of
 ## Running the Project
 To run the project, download all repository files and open the **fire.html** file. Make sure all files are located in the same directory/folder.
 
+
 # Pożar lasu
 Projekt utworzony w ramach przedmiotu **Symulacje komputerowe** przedstawiający działanie automatu komórkowego. Projekt uwzględnia różne stany komórek inaczej reagujących ze sobą. Dodatkową częścią do projektu jest opracowany algorytm wody tworzący zbiornik a nie pojedyncze komórki na mapie. 
 
